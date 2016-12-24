@@ -143,17 +143,17 @@ namespace LiveSplit.Model
 
         public void RegisterTimerModel(ITimerModel model)
         {
-            model.OnSplit                    += (s, e) => OnSplit?.Invoke(this, e);
-            model.OnSkipSplit                += (s, e) => OnSkipSplit?.Invoke(this, e);
-            model.OnUndoSplit                += (s, e) => OnUndoSplit?.Invoke(this, e);
-            model.OnStart                    += (s, e) => OnStart?.Invoke(this, e);
-            model.OnReset                    += (s, e) => OnReset?.Invoke(this, e);
-            model.OnPause                    += (s, e) => OnPause?.Invoke(this, e);
-            model.OnResume                   += (s, e) => OnResume?.Invoke(this, e);
-            model.OnScrollUp                 += (s, e) => OnScrollUp?.Invoke(this, e);
-            model.OnScrollDown               += (s, e) => OnScrollDown?.Invoke(this, e);
-            model.OnSwitchComparisonPrevious += (s, e) => OnSwitchComparisonPrevious?.Invoke(this, e);
-            model.OnSwitchComparisonNext     += (s, e) => OnSwitchComparisonNext?.Invoke(this, e);
+            model.OnSplit                    += (s, e) => OnSplit?.Invoke(model, e);
+            model.OnSkipSplit                += (s, e) => OnSkipSplit?.Invoke(model, e);
+            model.OnUndoSplit                += (s, e) => OnUndoSplit?.Invoke(model, e);
+            model.OnStart                    += (s, e) => OnStart?.Invoke(model, e);
+            model.OnReset                    += (s, e) => OnReset?.Invoke(model, e);
+            model.OnPause                    += (s, e) => OnPause?.Invoke(model, e);
+            model.OnResume                   += (s, e) => OnResume?.Invoke(model, e);
+            model.OnScrollUp                 += (s, e) => OnScrollUp?.Invoke(model, e);
+            model.OnScrollDown               += (s, e) => OnScrollDown?.Invoke(model, e);
+            model.OnSwitchComparisonPrevious += (s, e) => OnSwitchComparisonPrevious?.Invoke(model, e);
+            model.OnSwitchComparisonNext     += (s, e) => OnSwitchComparisonNext?.Invoke(model, e);
         }
 
         public void SetGameTime(TimeSpan? gameTime)

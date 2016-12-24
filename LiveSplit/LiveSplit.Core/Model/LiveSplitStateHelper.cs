@@ -202,5 +202,15 @@ namespace LiveSplit.Model
 
             return state.LayoutSettings.BestSegmentColor;
         }
+
+        public static LiveSplitState GetTimerEventState(object sender)
+        {
+            var state = sender as LiveSplitState;
+            if (state != null)
+                return state;
+
+            var timerModel = sender as ITimerModel;
+            return timerModel?.CurrentState;
+        }
     }
 }
